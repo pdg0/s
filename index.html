@@ -3,15 +3,12 @@
 <head>
     <title>PDG URL Shortener</title>
 </head>
-<body>
-    <body>
-    <h1>Display the Last Part of the URL</h1>
-
+<body>  
     <p id="result">Loading...</p>
 
     <script>
         // JavaScript code to extract and display the last part of the URL
-        window.onload = function () {
+       function getURl1() {
             var url = window.location.href;
             var parts = url.split('/');
             var lastPart = parts[parts.length - 1];
@@ -19,7 +16,39 @@
             // Update the content of the 'result' paragraph with the last part
             document.getElementById("result").textContent = lastPart;
         };
+
+    
+        // JavaScript code to fetch a URL from an external service
+        // and redirect the user to that URL using async/await
+        window.onload = async function () {
+            // Define the URL of the external service with the variable "AAA"
+            var serviceUrl = "https://service?var=AAA";
+
+            try {
+                // Fetch the URL from the external service
+                var response = true; //await fetch(serviceUrl);
+
+                if (response) {  //.ok
+                    // Extract the URL from the response text
+                    var url = await response.text();
+
+                    // Redirect the user to the obtained URL
+                    window.location.href = url;
+                } else {
+                    // Handle non-successful HTTP responses
+                    console.error("Error fetching URL:", response.status, response.statusText);
+                    document.getElementById("result").textContent = "Error fetching URL.";
+                }
+            } catch (error) {
+                // Handle any errors that occur during the fetch
+                console.error("Error:", error);
+                document.getElementById("result").textContent = "Error fetching URL.";
+            }
+        };
     </script>
 </body>
+        
+    </script>
+
 </body>
 </html>
