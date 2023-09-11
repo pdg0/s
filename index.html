@@ -4,6 +4,22 @@
     <title>PDG URL Shortener</title>
 </head>
 <body>
-    <h1>Hello, GitHub Pages!1</h1>
+    <body>
+    <h1>Display the Last Part of the URL</h1>
+
+    <p id="result">Loading...</p>
+
+    <script>
+        // JavaScript code to extract and display the last part of the URL
+        window.onload = function () {
+            var url = window.location.href;
+            var parts = url.split('/');
+            var lastPart = parts[parts.length - 1];
+
+            // Update the content of the 'result' paragraph with the last part
+            document.getElementById("result").textContent = lastPart;
+        };
+    </script>
+</body>
 </body>
 </html>
