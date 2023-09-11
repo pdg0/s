@@ -30,10 +30,10 @@
 
                 if (response) {  //.ok
                     // Extract the URL from the response text
-                    var url = await response.text();
+                    //var url = await response.text();
 
                     // Redirect the user to the obtained URL
-                    window.location.href = url;
+                    window.location.href = "http://amazon.com" //url;
                 } else {
                     // Handle non-successful HTTP responses
                     console.error("Error fetching URL:", response.status, response.statusText);
